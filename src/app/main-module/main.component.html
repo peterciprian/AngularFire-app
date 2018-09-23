@@ -1,3 +1,12 @@
+<ul>
+  <li class="text" *ngFor="let item of fb.items | async">
+    {{item.name}}
+  </li>
+</ul>
+<hr>
+<br>
+<br>
+<br>
 <div class="container">
   <div class="row">
     <div class="col-3">Név</div>
@@ -6,10 +15,10 @@
     <div class="col-3">Művelet</div>
   </div>
   <div class="row">
-    <div class="col-3 head"><input type="text" [(ngModel)]="jsonService.newItem.name"></div>
-    <div class="col-3 head"><input type="text" [(ngModel)]="jsonService.newItem.price"></div>
-    <div class="col-3 head"><input type="text" [(ngModel)]="jsonService.newItem.amount"></div>
-    <div class="col-3 head"><button class="btn btn-outline-success" (click)="jsonService.add(jsonService.newItem)">Add</button></div>
+    <div class="col-3 head"><input type="text" [(ngModel)]="fb.newItem.name"></div>
+    <div class="col-3 head"><input type="text" [(ngModel)]="fb.newItem.price"></div>
+    <div class="col-3 head"><input type="text" [(ngModel)]="fb.newItem.amount"></div>
+    <div class="col-3 head"><button class="btn btn-outline-success" (click)="fb.add(jsonService.newItem)">Add</button></div>
   </div>
   <div class="vonal"></div>
   <div *ngFor="let item of jsonService.items" class="row">
