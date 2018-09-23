@@ -1,0 +1,4 @@
+
+<button (click)="toggleStuff()" class="btn btn-small btn-outline-warning">{{buttonContent}}</button>
+<app-login *ngIf="!loggedIn"></app-login>
+<app-main *ngIf="loggedIn"></app-main>
