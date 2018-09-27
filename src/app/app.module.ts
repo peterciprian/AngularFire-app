@@ -9,22 +9,24 @@ import { MainComponent } from './main-module/main.component';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { FileUploadComponent } from 'src/app/main-module/file-upload/file-upload.component';
 
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyAfkp3Y8czYgigunnCvZw5ZspkKPdo1LNE",
-  authDomain: "ambi-angular-firebase.firebaseapp.com",
-  databaseURL: "https://ambi-angular-firebase.firebaseio.com",
-  projectId: "ambi-angular-firebase",
-  storageBucket: "ambi-angular-firebase.appspot.com",
-  messagingSenderId: "545748881981"
+  apiKey: 'AIzaSyAfkp3Y8czYgigunnCvZw5ZspkKPdo1LNE',
+  authDomain: 'ambi-angular-firebase.firebaseapp.com',
+  databaseURL: 'https://ambi-angular-firebase.firebaseio.com',
+  projectId: 'ambi-angular-firebase',
+  storageBucket: 'ambi-angular-firebase.appspot.com',
+  messagingSenderId: '545748881981'
 };
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MainComponent
+    MainComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
