@@ -5,7 +5,7 @@ import { FireBaseService } from './fire-base.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['../../assets/main.css']
+  styleUrls: ['../../assets/main.css'],
 })
 
 export class MainComponent implements OnInit {

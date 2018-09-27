@@ -1,6 +1,7 @@
 <input *ngIf="showFileNameInput" id="uploadFile" class="upload-file form-control" placeholder="Choose File" [(ngModel)]="selectedFileName"
-  disabled="disabled" />
-<div class="fileUpload btn btn-primary">
-  <span>{{uploadButtonText}}</span>
+  disabled="disabled" hidden/>
+<div class="fileUpload btn btn-outline-primary">
+  <span *ngIf="!selectedFileName">{{uploadButtonText}}</span>
+  <span *ngIf="selectedFileName">{{selectedFileName}}</span>
   <input type="file" class="upload" accept="*" (change)="changeListener($event)">
 </div>

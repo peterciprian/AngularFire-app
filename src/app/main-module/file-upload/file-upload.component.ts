@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-file-upload',
   templateUrl: './file-upload.component.html',
-  styleUrls: ['./file-upload.component.css'],
+  styleUrls: ['../../../assets/main.css'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

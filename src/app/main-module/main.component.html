@@ -1,42 +1,42 @@
 <div class="container">
-  <div class="row">
+  <div class="row mb-3">
     <div class="col-3">Név</div>
-    <div class="col-3">Ár</div>
-    <div class="col-3">Mennyiség</div>
+    <div class="col-2">Ár</div>
+    <div class="col-2">Mennyiség</div>
     <div class="col-3">Kép</div>
-    <div class="col-3">Művelet</div>
+    <div class="col-2">Művelet</div>
   </div>
-  <div class="row">
+  <div class="row mb-2">
     <div class="col-3 head">
-      <input type="text" [(ngModel)]="jsonService.newItem.name">
+      <input type="text" class="form-control" [(ngModel)]="jsonService.newItem.name">
+    </div>
+    <div class="col-2 head">
+      <input type="text" class="form-control" [(ngModel)]="jsonService.newItem.price">
+    </div>
+    <div class="col-2 head">
+      <input type="text" class="form-control" [(ngModel)]="jsonService.newItem.amount">
     </div>
     <div class="col-3 head">
-      <input type="text" [(ngModel)]="jsonService.newItem.price">
+      <app-file-upload [showFileNameInput]="true" allowedTypes="image/png, image/jpeg" uploadButtonText="Válassz képet" [(ngModel)]="jsonService.newItem.image"></app-file-upload>
     </div>
-    <div class="col-3 head">
-      <input type="text" [(ngModel)]="jsonService.newItem.amount">
-    </div>
-    <div class="col-3 head">
-      <app-file-upload [showFileNameInput]="true" allowedTypes="image/png, image/jpeg" uploadButtonText="Upload File" [(ngModel)]="jsonService.newItem.image"></app-file-upload>
-    </div>
-    <div class="col-3 head">
-      <button class="btn btn-outline-success" (click)="jsonService.add(jsonService.newItem)">Add</button>
+    <div class="col-2 head">
+      <button class="btn btn-block btn-outline-success" (click)="jsonService.add(jsonService.newItem)">Add</button>
     </div>
   </div>
   <div class="vonal"></div>
   <div *ngFor="let item of jsonService.items" class="row">
     <div class="col-3 rows">
-      <input type="text" [(ngModel)]="item.name">
+      <input type="text" class="form-control" [(ngModel)]="item.name">
     </div>
-    <div class="col-3 rows">
-      <input type="text" [(ngModel)]="item.price">
+    <div class="col-2 rows">
+      <input type="text" class="form-control" [(ngModel)]="item.price">
     </div>
-    <div class="col-3 rows">
-      <input type="text" [(ngModel)]="item.amount">
+    <div class="col-2 rows">
+      <input type="text" class="form-control" [(ngModel)]="item.amount">
     </div>
     <div class="col-3 rows"><img src="{{item.image}}"></div>
-    <div class="col-3 rows">
-      <button class="btn btn-outline-warning" (click)="jsonService.delete(item.name)">Delete</button>
+    <div class="col-2 rows">
+      <button class="btn btn-block btn-outline-warning" (click)="jsonService.delete(item.name)">Delete</button>
     </div>
   </div>
 </div>
