@@ -16,3 +16,6 @@ input.upload {
     margin: auto;
     top: 0px;
 }
+.image {
+    width: 100%;
+}

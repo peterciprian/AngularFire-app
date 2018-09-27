@@ -34,7 +34,7 @@
     <div class="col-2 rows">
       <input type="text" class="form-control" [(ngModel)]="item.amount">
     </div>
-    <div class="col-3 rows"><img src="{{item.image}}"></div>
+    <div class="col-3 rows"><img class="image" src="{{item.image}}"></div>
     <div class="col-2 rows">
       <button class="btn btn-block btn-outline-warning" (click)="jsonService.delete(item.name)">Delete</button>
     </div>
