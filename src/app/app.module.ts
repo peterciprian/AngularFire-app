@@ -7,8 +7,10 @@ import { MainModuleModule } from './main-module/main-module.module';
 import { LoginComponent } from './login-module/login.component';
 import { MainComponent } from './main-module/main.component';
 import { FormsModule } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from './envireonment';
 import { FileUploadComponent } from 'src/app/main-module/file-upload/file-upload.component';
 
 
@@ -33,9 +35,11 @@ export const firebaseConfig = {
     LoginModuleModule,
     MainModuleModule,
     FormsModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [AngularFirestore],
+  providers: [
+    AngularFireAuth,
+    AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

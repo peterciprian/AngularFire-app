@@ -11,8 +11,7 @@ import { FireBaseService } from './fire-base.service';
 export class MainComponent implements OnInit {
 
 
-constructor(private jsonService: JsonService, private fb: FireBaseService) {
-  console.log(fb.items);
+constructor(protected fb: FireBaseService) {
  }
   ngOnInit() {
   }

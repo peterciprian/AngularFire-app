@@ -5,17 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class JsonService {
   private items = [{
-    name: "asd",
+    name: 'asd',
     price: 100,
     amount: 7
 
-  },{
-    name: "fg",
+  }, {
+    name: 'fg',
     price: 101,
     amount: 9
 
-  },{
-    name: "hgfnbfg",
+  }, {
+    name: 'hgfnbfg',
     price: 9,
     amount: 1
   }
@@ -36,15 +36,16 @@ export class JsonService {
       name: '',
       price: '',
       amount: ''
-  }}
+  };
+}
 
   delete(name) {
-    let arr = this.items.filter(e=> e.name !=name);
+    const arr = this.items.filter(e => e.name !== name);
     this.items = arr;
   }
 
  update(item) {
-   for (let i in this.items) {
+   for (const i in this.items) {
      if (this.items[i].name === item.name) {
        this.items[i] = item;
      }

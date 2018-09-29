@@ -8,35 +8,38 @@
   </div>
   <div class="row mb-2">
     <div class="col-3 head">
-      <input type="text" class="form-control" [(ngModel)]="jsonService.newItem.name">
+      <input type="text" class="form-control" [(ngModel)]="fb.newItem.name">
     </div>
     <div class="col-2 head">
-      <input type="text" class="form-control" [(ngModel)]="jsonService.newItem.price">
+      <input type="text" class="form-control" [(ngModel)]="fb.newItem.price">
     </div>
     <div class="col-2 head">
-      <input type="text" class="form-control" [(ngModel)]="jsonService.newItem.amount">
+      <input type="text" class="form-control" [(ngModel)]="fb.newItem.amount">
     </div>
     <div class="col-3 head">
-      <app-file-upload [showFileNameInput]="true" allowedTypes="image/png, image/jpeg" uploadButtonText="Válassz képet" [(ngModel)]="jsonService.newItem.image"></app-file-upload>
+      <app-file-upload [showFileNameInput]="true" allowedTypes="image/png, image/jpeg" uploadButtonText="Válassz képet" [(ngModel)]="fb.newItem.image"></app-file-upload>
     </div>
     <div class="col-2 head">
-      <button class="btn btn-block btn-outline-success" (click)="jsonService.add(jsonService.newItem)">Add</button>
+      <button class="btn btn-block btn-outline-success" (click)="fb.add(fb.newItem)">Add</button>
     </div>
   </div>
   <div class="vonal"></div>
-  <div *ngFor="let item of jsonService.items" class="row">
+  <div *ngFor="let item of fb.tableData let i = index" class="row">
     <div class="col-3 rows">
-      <input type="text" class="form-control" [(ngModel)]="item.name">
+      <input type="text" class="form-control" [(ngModel)]="item.values.name">
     </div>
     <div class="col-2 rows">
-      <input type="text" class="form-control" [(ngModel)]="item.price">
+      <input type="text" class="form-control" [(ngModel)]="item.values.price">
     </div>
     <div class="col-2 rows">
-      <input type="text" class="form-control" [(ngModel)]="item.amount">
+      <input type="text" class="form-control" [(ngModel)]="item.values.amount">
     </div>
-    <div class="col-3 rows"><img class="image" src="{{item.image}}"></div>
+    <div class="col-3 rows"><img class="image" src="{{item.values.image}}"></div>
     <div class="col-2 rows">
-      <button class="btn btn-block btn-outline-warning" (click)="jsonService.delete(item.name)">Delete</button>
+      <div class="w-100 btn-group">
+      <button class="w-100 btn btn-outline-warning" (click)="fb.update(item)">Update</button>
+      <button class="w-100 btn btn-outline-danger" (click)="fb.delete(item.key)">Delete</button>
+    </div>
     </div>
   </div>
 </div>
